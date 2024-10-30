@@ -1,3 +1,25 @@
-body{
-    background-color: red;
+.header-nav-bar{
+    display: flex;
+    list-style-type: none;
+    flex-basis: 1;
+    background-color: #f7f7f7;
+    min-height: 40px;
+    align-items: stretch;
+}
+
+.header-nav-bar > li{
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: #333333;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.header-nav-bar > li:hover,
+.header-nav-bar > li:focus{
+    background-color: aliceblue;
+    
 }
