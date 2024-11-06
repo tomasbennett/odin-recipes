@@ -46,16 +46,13 @@ body > *:not(.heading-bar, .heading-bar-outer-wrap, .header-nav-bar, .header-nav
     padding: 15px;
     height: 100%;
     cursor: pointer;
-}
-
-.header-nav-bar li{
     transition: 0.3s;
     font-size: 1rem;
 }
 
 .Home_Page{
-    flex-basis: 8%;
     margin-right: auto;
+    flex-basis: 8%;
 }
 
 .heading-bar *:has(>[href="#"]){
@@ -73,11 +70,10 @@ a{
 .fa-home {
     color: #333333;
     font-size: 2rem;
-    padding: 40%;
 }
 
-.header-nav-bar li:hover,
-.header-nav-bar li:focus{
+.heading-bar-outer-wrap *:has(>a):not(:has(>[href="#"])):hover,
+.heading-bar-outer-wrap *:has(>a):not(:has(>[href="#"])):focus{
     background-color: aliceblue;
     font-size: 1.1rem;
 }
