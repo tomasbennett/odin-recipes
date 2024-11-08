@@ -1,25 +1,58 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+}
+
+body > *:not(.heading-bar, .header-nav-bar, .header-nav-bar > *){
+    margin-left: 2%;
+}
+
+.heading-bar{
+    display: flex;
+    background-color: lightgray;
+    margin-top: 1%;
+    height: 8vh;
+}
+
 .header-nav-bar{
     display: flex;
     list-style-type: none;
-    flex-basis: 1;
-    background-color: #f7f7f7;
-    min-height: 40px;
-    align-items: stretch;
+    height: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    flex: 1;
 }
 
-.header-nav-bar > li{
+
+.header-nav-bar li{
     display: flex;
-    align-items: center;
-}
-
-a {
-    color: #333333;
+    text-align: center;
+    justify-content: center;
     padding: 15px;
-    text-decoration: none;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+
 }
 
-.header-nav-bar > li:hover,
-.header-nav-bar > li:focus{
+.header-nav-bar li:nth-of-type(2){
+    margin-left: auto;
+}
+
+.header-nav-bar li:last-of-type{
+    margin-right: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.header-nav-bar li:hover,
+.header-nav-bar li:focus{
     background-color: aliceblue;
-    
 }
