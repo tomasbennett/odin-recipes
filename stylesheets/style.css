@@ -2,87 +2,96 @@
     --header-font-size: 1rem;
 }
 
+/*
+   ***** General html and body styling for the full page *****
+*/
+
 *, *::after, *::before{
     box-sizing: border-box;
+    margin: 0;
+}
+
+html, body{
+    height: 100dvh;
+    background-color: rgb(245, 241, 231);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 *:not(i){
     font-family: SourceSerif, Helvetica, sans-serif;
 }
 
-html, body{
-    margin: 0;
-    height: 100vh;
-    background-color: rgb(245, 241, 231);
-}
-
-body > *:not(.heading-bar, .heading-bar-outer-wrap, .header-nav-bar, .header-nav-bar li){
-    margin-left: 2%;
-}
-
-h1, h3{
+h1, 
+h3{
     font-family: Renner, Helvetica, sans-serif;
 }
 
-img{
-    height: auto;
+/*
+   ***** General styling for the header navigation bar *****
+*/
+
+.heading-bar,
+.heading-bar *:not(i, .Home_Page){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-bar-outer-wrap,
+.heading-bar-outer-wrap *:not(i){
+    height: 100%;
 }
 
 .heading-bar{
-    display: flex;
     background-color: lightgray;
-    height: clamp(60px, 11%, 100px);
-    justify-content: center;
+    height: clamp(60px, 11%, 200px);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
     margin-top: 10px;
+
+    flex-shrink: 0;
 
     top: 0;
     position: sticky;
 }
 
 .heading-bar-outer-wrap{
-    display: flex;
-    height: 100%;
     width: 95%;
 }
 
 .header-nav-bar{
-    display: flex;
     list-style-type: none;
-    height: 100%;
-    margin: 0;
-    justify-content: center;
+}
+
+.heading-bar-outer-wrap a{
+    text-decoration: none;
+    font-weight: 540;
+    padding: 15px;
+}
+
+.header-nav-bar a{
+    width: 100%;
 }
 
 .header-nav-bar li,
 .Home_Page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     cursor: pointer;
     font-size: var(--header-font-size);
-    flex-grow: 1;
 }
 
 .Home_Page{
-    justify-content: flex-start;
     margin-left: 20px;
-}
-
-a{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 570;
-    height: 100%;
-    padding: 15px;
+    margin-right: auto;
 }
 
 .Home_Page_Link{
     width: clamp(65px, 100px, 120px);
+}
+
+*[href="#"]{
+    background-color: white;
 }
 
 .fa-home{
@@ -90,16 +99,15 @@ a{
 }
 
 .fa-home, 
-a{
+.header-nav-bar a{
     color: #333333;
     transition: 0.3s ease;
-    will-change: font-size, background-color;
-
+    will-change: font-size;
 }
 
-*[href="#"]{
-    background-color: white;
-}
+/*
+   ***** Transition animations for the header navigation links *****
+*/
 
 .heading-bar-outer-wrap a:hover,
 .heading-bar-outer-wrap a:focus{
@@ -109,5 +117,87 @@ a{
 
 .heading-bar-outer-wrap a:hover i,
 .heading-bar-outer-wrap a:focus i{
-    font-size: calc(var(--header-font-size) + 1.2rem);
+    font-size: calc(var(--header-font-size) + 1.05rem);
+}
+
+/*
+   ***** General styling for the main content *****
+*/
+
+main{
+    margin-left: clamp(10px, 5%, 30px);
+    margin-bottom: 40px;
+}
+
+/*
+   ***** General styling for the footer *****
+*/
+
+.footer{
+    background-color: #333;
+    color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px 20px 60px;
+}
+
+.footer-section{
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h4{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section li{
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.footer-section a{
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-bottom{
+    text-align: center;
+    font-size: 0.85em;
+    padding: 10px;
+    border-top: 1px solid #444;
+    margin-top: 10px;
+}
+
+/*
+   ***** Transitions and animations for the footer *****
+*/
+
+.footer-section a:hover {
+    color: #0f9b8e; 
+    padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        margin-bottom: 15px;
+        text-align: center;
+    }
 }
